@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_174821) do
     t.datetime "end_time"
     t.bigint "user_id", null: false
     t.bigint "field_id", null: false
+    t.boolean "full"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["field_id"], name: "index_bookings_on_field_id"

@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_field, only: %i[new create]
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
     @booking = Booking.new
   end
@@ -11,10 +15,6 @@ class BookingsController < ApplicationController
     @booking.field = @field
     @booking.save
     redirect_to booking_path(@booking.id)
-  end
-
-  def show
-    @booking = Booking.find(params[:id])
   end
 
   private
