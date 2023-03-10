@@ -1,4 +1,11 @@
 <body style="background-color: #667F63">
+
+<%if policy(@field).new? %>
+  <%= link_to "Create a field", new_field_path(@field) %> |
+<% end %>
+<%= button_to "Create field", @field, method: :delete if policy(@field).destroy? %>
+
+
 <div class="container mt-5 text-white">
   <%= simple_form_for(@field) do |f| %>
    <%= f.input :photo, as: :file %>

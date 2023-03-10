@@ -1,9 +1,10 @@
 class FieldsController < ApplicationController
+
   def index
     if params[:query].present?
       @fields = Field.search_by_name_and_address(params[:query])
     else
-      @fields = Field.all
+      @fields = policy_scope(Field)
     end
 
     @markers = @fields.geocoded.map do |field|
@@ -18,11 +19,13 @@ class FieldsController < ApplicationController
 
   def new
     @field = Field.new
+    authorize @field
   end
 
   def create
     @field = Field.new(field_params)
     @field.user = current_user
+    authorize @field
     if @field.save!
       redirect_to fields_path
     else
@@ -32,15 +35,18 @@ class FieldsController < ApplicationController
 
   def edit
     @field = Field.find(params[:id])
+    authorize @field
   end
 
   def update
     @field = Field.find(params[:id])
+    authorize @field
     @field.update(params[:field])
   end
 
   def destroy
     @field = Field.find(params[:id])
+    authorize @field
     @field.destroy
     redirect_to fields_path(@field), status: :see_other
   end
