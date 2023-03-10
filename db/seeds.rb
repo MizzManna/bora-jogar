@@ -22,17 +22,17 @@ puts"Users created"
 puts"Creating fields"
 
 file = URI.open("https://fastly.4sqi.net/img/general/600x600/30685957_4h7XQN-z2KBnbEEh4k_JJpUT8B3_B5VInsqYbvQDd2Y.jpg")
-field = Field.new(name: "Lauro Muller", location: "Ao lado do shopping Rio Sul", user_id: user.id, number_of_players: 10, price: 100)
+field = Field.new(name: "Lauro Muller", address: "Rua Lauro Müller, 924 - Botafogo, Rio de Janeiro - RJ, 22290-160", user_id: user.id, number_of_players: 10, price: 100)
 field.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 field.save!
 
 file = URI.open("https://mundograma.com.br/wp-content/uploads/2019/01/WhatsApp-Image-2018-08-20-at-10.42.18-1024x768.jpeg")
-field = Field.new(name: "Bragantino", location: "Casa do kralho", user_id: user.id, number_of_players: 10, price: 100)
+field = Field.new(name: "Bragantino", address: "Casa do kralho", user_id: user.id, number_of_players: 10, price: 100)
 field.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 field.save!
 
 file = URI.open("https://classic.exame.com/wp-content/uploads/2019/03/maraca1.jpg?quality=70&strip=info&w=888")
-field = Field.new(name: "Maracanã", location: "Maracanã", user_id: user.id, number_of_players: 22, price: 200000)
+field = Field.new(name: "Maracanã", address: "Av. Pres. Castelo Branco, Portão 3 - Maracanã, Rio de Janeiro - RJ, 20271-130", user_id: user.id, number_of_players: 22, price: 200000)
 field.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 field.save!
 
