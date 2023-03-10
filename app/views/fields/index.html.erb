@@ -9,8 +9,8 @@
         <div class="row">
             <% @fields.each do |field| %>
             <div class="col-4 mt-3">
-                <div class="card" style="width: 22rem;">
-                  <%= cl_image_tag field.photo.key, height: 200, width: 300, class:"card-img-top" %>
+                <div class="card" style="width: 18rem;">
+                  <%= cl_image_tag field.photo.key, height: 250, width: 250, class:"card-img-top" %>
                   <div class="card-body">
                     <h5 class="card-title"><%= field.name %></h5>
                     <p class="card-text">$ <%= field.price %></p>
