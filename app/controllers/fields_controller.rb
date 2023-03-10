@@ -2,7 +2,7 @@ class FieldsController < ApplicationController
 
   def index
     if params[:query].present?
-      @fields = Field.search_by_title_and_description(params[:query])
+      @fields = Field.search_by_name_and_location(params[:query])
     else
       @fields = policy_scope(Field)
     end

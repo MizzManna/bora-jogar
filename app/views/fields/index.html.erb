@@ -3,6 +3,14 @@
 <div style="text-align: -webkit-center;" class="mt-3 p-3 text-white">
 <h5>ENCONTRE AQUI</h5>
  <h1>UM CAMPO PARA JOGAR</h1>
+ <%= form_with url: fields_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+     placeholder: "Find a field"
+   %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
 </div>
 
       <div class="container pb-5 mb-5">
