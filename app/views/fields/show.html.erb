@@ -7,7 +7,7 @@
       </div>
     </div>
       <p class= 'mt-3 fs-4'><strong>$<%= @field.price %></strong></p>
-      <p class= 'fs-4'><%= @field.location %></p>
+      <p class= 'fs-4'><%= @field.address %></p>
       <p class= 'fs-4'><%= @field.number_of_players %></p>
       <div class="col pt-5 d-flex justify-content-center">
         <%= simple_form_for [@field, @booking], data: { controller: 'flatpickr' } do |f| %>

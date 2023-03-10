@@ -1,9 +1,13 @@
 class FieldsController < ApplicationController
   def index
     if params[:query].present?
-      @fields = Field.search_by_name_and_location(params[:query])
+      @fields = Field.search_by_name_and_address(params[:query])
     else
       @fields = Field.all
+    end
+
+    @markers = @fields.geocoded.map do |field|
+      { lat: field.latitude, lng: field.longitude }
     end
   end
 
@@ -44,6 +48,6 @@ class FieldsController < ApplicationController
   private
 
   def field_params
-    params.require(:field).permit(:price, :name, :location, :number_of_players, :photo)
+    params.require(:field).permit(:price, :name, :address, :number_of_players, :photo)
   end
 end
