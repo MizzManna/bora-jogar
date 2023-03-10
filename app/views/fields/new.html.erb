@@ -1,0 +1,16 @@
+<body style="background-color: #667F63">
+<div class="container mt-5 text-white">
+  <%= simple_form_for(@field) do |f| %>
+   <%= f.input :photo, as: :file %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :location %>
+    <%= f.input :number_of_players %>
+    <%= f.submit%>
+  <% end %>
+
+  <div class = 'pt-3 mb-5'>
+    <%= link_to "Back to Index", fields_path%>
+  </div>
+</div>
+</body>
