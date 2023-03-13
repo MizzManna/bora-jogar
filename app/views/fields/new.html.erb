@@ -1,7 +1,7 @@
 <body style="background-color: #667F63">
 
 <%if policy(@field).new? %>
-  <%= link_to "Create a field", new_field_path(@field) %> |
+  <%= link_to "Create a field", new_field_path(@field) %>
 <% end %>
 <%= button_to "Create field", @field, method: :delete if policy(@field).destroy? %>
 
@@ -11,7 +11,7 @@
    <%= f.input :photo, as: :file %>
     <%= f.input :name %>
     <%= f.input :price %>
-    <%= f.input :location %>
+    <%= f.input :address %>
     <%= f.input :number_of_players %>
     <%= f.submit%>
   <% end %>

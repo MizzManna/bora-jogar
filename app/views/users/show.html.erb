@@ -1,6 +1,23 @@
-<%= @user %>
+<div class="container d-flex p-5 justify-content-center">
 
+    <%# <div class="col">
+      <div class="h-100 img-fluid">
+       <%= cl_image_tag @user.photo.key, height: 550, width: 400 %>
+      <%# </div>
+    </div> %>
 
-<% @user.bookings.each do |booking| %>
-<%= booking.field%>
-<% end %>
+    <div class = "col">
+      <h1 class = "text-capitalize pt-3"><%= @user.name%></h1>
+      <p class= 'fs-4'><strong>email: </strong><%= @user.email %></p>
+      <p class= 'fs-4'><strong>phone number: </strong><%= @user.phone_number %></p>
+      <p class= 'fs-4'><strong>address: </strong><%= @user.address %></p>
+      <p class= 'fs-4'><strong>birthday: </strong><%= @user.birthday %></p>
+    </div>
+
+    <div>
+      <% @user.bookings.each do |booking| %>
+      <%= booking.field%>
+      <% end %>
+    </div>
+
+  </div>

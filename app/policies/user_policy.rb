@@ -3,10 +3,6 @@ class UserPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-    # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
   end
 
   def show?
