@@ -6,6 +6,10 @@ class FieldPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    true
+  end
+
   def create?
     user.admin_user == true
   end

@@ -23,7 +23,9 @@
                     <h5 class="card-title"><%= field.name %></h5>
                     <p class="card-text">$ <%= field.price %></p>
                     <%= link_to "More details", field_path(field)%>
-                    <p><%= link_to 'Delete', field_path(field), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></p>
+                    <% if current_user.admin_user == true %>
+                      <p><%= link_to 'Delete', field_path(field), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></p>
+                    <% end %>
                   </div>
                 </div>
               </div>
