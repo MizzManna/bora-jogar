@@ -8,7 +8,7 @@ class FieldsController < ApplicationController
     end
 
     @markers = @fields.geocoded.map do |field|
-      { lat: field.latitude, lng: field.longitude }
+      { lat: field.latitude, lng: field.longitude, info_window_html: render_to_string(partial: "info_window", locals: {field: field})}
     end
   end
 
