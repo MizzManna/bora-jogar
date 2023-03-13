@@ -1,8 +1,8 @@
 class FieldsController < ApplicationController
-
   def index
     if params[:query].present?
-      @fields = Field.search_by_name_and_address(params[:query])
+      @fields_search = Field.search_by_name_and_address(params[:query])
+      @fields = policy_scope(@fields_search)
     else
       @fields = policy_scope(Field)
     end
@@ -15,6 +15,7 @@ class FieldsController < ApplicationController
   def show
     @field = Field.find(params[:id])
     @booking = Booking.new
+    authorize @field
   end
 
   def new

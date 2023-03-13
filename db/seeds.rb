@@ -10,11 +10,11 @@ puts"Creating users"
 Booking.destroy_all
 Field.destroy_all
 User.destroy_all
-user = User.new(email: "teste@teste.com", password: 123456)
+user = User.new(email: "teste@teste.com", password: 123456, admin_user: true)
 user.save!
-user_joao = User.new(email: "joaoarthur_976@hotmail.com", password: 123456)
+user_joao = User.new(email: "joaoarthur_976@hotmail.com", password: 123456, admin_user: true)
 user_joao.save!
-user_manna = User.new(email: "mannaincali@gmail.com", password: 123456)
+user_manna = User.new(email: "mannaincali@gmail.com", password: 123456, admin_user: true)
 user_manna.save!
 
 puts"Users created"
