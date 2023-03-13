@@ -1,4 +1,4 @@
-<div class = "container p-4">
+<div class = "container col-5 p-4">
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
@@ -9,6 +9,18 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "name" }%>
+    <%= f.input :phone_number,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "phone_number" }%>
+    <%= f.input :address,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "address" }%>
+    <%= f.input :birthday,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "birthday" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -23,7 +35,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: "mb-2 btn btn-success" %>
+    <%= f.button :submit, "Sign up", class: "mt-2 mb-2 btn btn-success" %>
   </div>
 <% end %>
 

@@ -1,7 +1,7 @@
 <body style="background-color: #667F63">
 
 <%if policy(@field).new? %>
-  <%= link_to "Create a field", new_field_path(@field) %> |
+  <%= link_to "Create a field", new_field_path(@field) %>
 <% end %>
 <%= button_to "Create field", @field, method: :delete if policy(@field).destroy? %>
 
